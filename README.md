@@ -4,7 +4,7 @@ As is.
 
 # date.cpp
 
-The class `ExpiryDate` inherits from `Date` and overrides the base virtual function print() to print `Expiray date: dd:mm:yyyy` instead of `Date: dd:mm:yyyy`.
+The class `ExpiryDate` inherits from `Date` and overrides the base virtual function `print()` to print `Expiray date: dd:mm:yyyy` instead of `Date: dd:mm:yyyy`.
 
 In `main()`, first, an array of base class `Date` pointers is created at stack. It points to derived class `ExpiryDate` objects. The following functions are then called for demonstration: 
 
