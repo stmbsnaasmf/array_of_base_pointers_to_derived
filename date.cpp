@@ -56,6 +56,9 @@ int main(void)
 //	qrr[0] = new ExpiryDate(02, 05, 2021);
 	
 	
+	
+	cout << "On stack\n\n";
+		
 	/* "dates" is an array of Date pointers on stack, and not heap.
 	This works for demonstration, but is not ideal because the array of pointers should be on heap, not stack.
 	This also matters because print(Date* arr, int arrSize) works only for a pointer array on stack. 
@@ -66,6 +69,7 @@ int main(void)
 	dates[2] = new ExpiryDate(04, 05, 2021);
 	dates[3] = new ExpiryDate(05, 05, 2021);
 	dates[4] = new ExpiryDate(06, 05, 2021);
+	
 	print(dates, 5);
 	cout << "\n";
 	sortAsc(dates, 5);
@@ -73,8 +77,16 @@ int main(void)
 	cout << "\n";
 	sortDsc(dates, 5);
 	print(dates, 5);
-	cout << "\n\n\n";
+	cout << "\n";
 	
+	delete dates[0];
+	delete dates[1];
+	delete dates[2];
+	delete dates[3];
+	delete dates[4];
+	
+	
+	cout << "\n\nOn heap\n\n";
 	/* The code below does work and is correct.
 	It declares an array of Date pointers on heap. */	
 	Date** array = new Date*[5];
